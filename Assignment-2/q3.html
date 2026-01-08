@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag & Drop Task Manager</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        padding: 20px;
+      }
+      .input-section {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .board {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .column {
+        background-color: #ebedf0;
+        border-radius: 8px;
+        width: 300px;
+        min-height: 400px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .column h2 {
+        text-align: center;
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+
+      .task-card {
+        background-color: white;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        cursor: grab;
+        transition: background 0.3s;
+      }
+      .task-card:active {
+        cursor: grabbing;
+      }
+      .task-card p {
+        margin: 5px 0;
+      }
+      .date {
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      .completed-task {
+        background-color: #d4edda !important;
+        border-left: 5px solid #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter task name..." />
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="board">
+      <div
+        class="column"
+        id="todo"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <h2>To Do</h2>
+      </div>
+      <div
+        class="column"
+        id="inprogress"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <h2>In Progress</h2>
+      </div>
+      <div
+        class="column"
+        id="completed"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <h2>Completed</h2>
+      </div>
+    </div>
+
+    <script>
+      let taskCounter = 0;
+
+      function addTask() {
+        const input = document.getElementById("taskInput");
+        const taskName = input.value;
+
+        if (taskName.trim() === "") {
+          alert("Please enter a task name.");
+          return;
+        }
+
+        taskCounter++;
+        const date = new Date().toLocaleDateString();
+
+        const taskCard = document.createElement("div");
+        taskCard.className = "task-card";
+        taskCard.id = "task-" + taskCounter;
+        taskCard.draggable = true;
+
+        taskCard.ondragstart = (event) => {
+          event.dataTransfer.setData("text", event.target.id);
+        };
+
+        taskCard.innerHTML = `
+            <p><strong>${taskName}</strong></p>
+            <p class="date">Added: ${date}</p>
+        `;
+
+        document.getElementById("todo").appendChild(taskCard);
+        input.value = "";
+      }
+
+      function allowDrop(event) {
+        event.preventDefault();
+      }
+
+      function drop(event) {
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text");
+        const draggedElement = document.getElementById(data);
+        const dropzone = event.target.closest(".column");
+
+        if (dropzone) {
+          dropzone.appendChild(draggedElement);
+
+          if (dropzone.id === "completed") {
+            draggedElement.classList.add("completed-task");
+            alert("Task Completed Successfully");
+          } else {
+            draggedElement.classList.remove("completed-task");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
