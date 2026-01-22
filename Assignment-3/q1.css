@@ -1,0 +1,39 @@
+.field {
+  margin-bottom: 15px;
+}
+input.invalid {
+  border: 2px solid #ff4d4d;
+  background-color: #fff2f2;
+}
+.error {
+  color: #ff4d4d;
+  font-size: 12px;
+  display: block;
+}
+#skillsContainer {
+  display: none;
+} /* Hidden by default for Students */
+.registration-card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}

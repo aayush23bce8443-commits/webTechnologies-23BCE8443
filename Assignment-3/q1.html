@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adaptive Registration System</title>
+    <link rel="stylesheet" href="q1.css" />
+  </head>
+  <body>
+    <div class="registration-card">
+      <h2>Create Account</h2>
+      <form id="registrationForm">
+        <div class="field">
+          <input type="text" id="name" placeholder="Full Name" required />
+          <span class="error" id="nameError"></span>
+        </div>
+
+        <div class="field">
+          <input type="email" id="email" placeholder="Email Address" required />
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <div class="field">
+          <select id="role">
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <div id="pwStrength" class="strength-meter"></div>
+          <span class="error" id="passwordError"></span>
+        </div>
+
+        <div class="field">
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <span class="error" id="confirmError"></span>
+        </div>
+
+        <div class="field">
+          <input type="number" id="age" placeholder="Age" required />
+          <span class="error" id="ageError"></span>
+        </div>
+
+        <div id="skillsContainer" class="field">
+          <input
+            type="text"
+            id="skills"
+            placeholder="Skills (comma separated)"
+          />
+        </div>
+
+        <button type="submit" id="submitBtn">Register</button>
+      </form>
+    </div>
+    <script src="q1.js"></script>
+  </body>
+</html>
