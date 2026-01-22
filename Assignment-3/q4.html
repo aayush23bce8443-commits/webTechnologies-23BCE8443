@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Real-Time Activity Monitor</title>
+    <link rel="stylesheet" href="q4.css" />
+  </head>
+  <body>
+    <div class="monitor-container">
+      <h2>Activity Monitor</h2>
+
+      <div id="interactionZone" class="interaction-area">
+        <p>Interact here (Click, Type, Focus)</p>
+        <input type="text" id="trackInput" placeholder="Type something..." />
+        <button id="trackBtn">Click Me</button>
+      </div>
+
+      <div class="controls">
+        <button onclick="resetLog()" class="btn-reset">Reset Log</button>
+        <button onclick="exportLog()" class="btn-export">Export Log</button>
+      </div>
+
+      <div id="warningBox" class="warning-box">
+        ⚠️ Suspicious Activity Detected!
+      </div>
+
+      <div class="log-wrapper">
+        <h3>Activity Log</h3>
+        <ul id="logList"></ul>
+      </div>
+    </div>
+    <script src="q4.js"></script>
+  </body>
+</html>
