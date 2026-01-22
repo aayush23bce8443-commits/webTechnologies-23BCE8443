@@ -1,0 +1,29 @@
+.shop-container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.products,
+.cart {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+.product-item,
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+}
+.discount {
+  color: green;
+  font-weight: bold;
+}
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
