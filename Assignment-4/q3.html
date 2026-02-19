@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Q3 - Student Management System</title>
+    <link rel="stylesheet" href="q3.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Management System</h2>
+
+      <form id="studentForm">
+        <input type="text" id="studentId" placeholder="Student ID" required />
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="text" id="department" placeholder="Department" required />
+        <input type="number" id="marks" placeholder="Marks" required />
+        <button type="submit">Add / Update Student</button>
+      </form>
+
+      <div id="message"></div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Marks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+    </div>
+
+    <script src="q3.js"></script>
+  </body>
+</html>

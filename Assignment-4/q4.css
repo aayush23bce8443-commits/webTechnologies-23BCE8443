@@ -1,0 +1,67 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  padding: 8px;
+  width: 65%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #2193b0;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1b7f94;
+}
+
+.weather-box {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.spinner {
+  display: none;
+  margin: 15px auto;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #2193b0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
