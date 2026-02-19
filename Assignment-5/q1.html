@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="q1.css" />
+  </head>
+  <body>
+    <h2>Employee Management System</h2>
+
+    <div class="form-container">
+      <input type="text" id="empId" placeholder="Employee ID" />
+      <input type="text" id="empName" placeholder="Name" />
+      <input type="text" id="empDept" placeholder="Department" />
+      <input type="number" id="empSalary" placeholder="Salary" />
+
+      <button onclick="addEmployee()">Add</button>
+      <button onclick="updateEmployee()">Update</button>
+      <button onclick="deleteEmployee()">Delete</button>
+      <button onclick="loadEmployees()">Load Employees</button>
+    </div>
+
+    <p id="message"></p>
+
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="q1.js"></script>
+  </body>
+</html>

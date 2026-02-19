@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Student Record System</title>
+    <link rel="stylesheet" href="q3.css" />
+  </head>
+  <body>
+    <h2>Student Record System</h2>
+
+    <div class="form-container">
+      <input type="text" id="studentId" placeholder="Student ID" />
+      <input type="text" id="studentName" placeholder="Name" />
+      <input type="text" id="studentCourse" placeholder="Course" />
+      <input type="number" id="studentMarks" placeholder="Marks" />
+
+      <button onclick="addStudent()">Add</button>
+      <button onclick="updateStudent()">Update</button>
+      <button onclick="deleteStudent()">Delete</button>
+      <button onclick="loadStudents()">Load Students</button>
+    </div>
+
+    <p id="message"></p>
+
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="q3.js"></script>
+  </body>
+</html>

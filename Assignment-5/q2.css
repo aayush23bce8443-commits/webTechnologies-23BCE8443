@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.form-container {
+  margin: 20px;
+}
+
+input,
+select {
+  padding: 8px;
+  margin: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: white;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background-color: #28a745;
+  color: white;
+}
+
+#message {
+  font-weight: bold;
+  margin-top: 10px;
+}
